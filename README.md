@@ -146,3 +146,38 @@ async function getFavoriteNumber(): Promise<number> {
   return 26;
 }
 ```
+
+## Anonymous functions
+
+Anonymous functions are a little bit different from function declarations.
+
+## Object types
+
+Apart from primitives, the most common sort of type you will encounter is an _object type_. This refers to any JavaScript value with properties, which is almost all of them! to define an object type, we simply list its properties and their types.
+
+```typescript
+function printCoord(pt: { x: number; y: number }) {
+  console.log("The coordinate's x value is: " + pt.x);
+  console.log("The coordinate's y values is: " + pt.y);
+}
+
+console.log(printCoord({x: 5; y: 10}))
+
+```
+
+Here, we annotated the parameters with a type with two properties--`x` and `y` -- which are both of type `number`. You can use `,` or `;` to separate the properties, and the last separator is optional either way.
+
+The type part of each property is also optional. If you don't specify a type, it will be assumed to be `any`.
+
+## Optional properties
+
+Object types can also specify that some or all of their properties are _optional_. To do this, add a `?` after properties name:
+
+```typescript
+function printName(object: { first: string; last?: string }) {
+  // ...
+}
+
+printName({ first: "Bob" });
+printName({ first: "Alice", lats: "Alison" });
+```

@@ -89,17 +89,15 @@ function echo<T>(input: T): T {
 
 // console.log(longMessage("Alice", 5000));
 
-const burgerPromise = new Promise((resolve, reject) => {
-  const isKitchenOpen = true;
-  if (isKitchenOpen) {
-    setTimeout(() => {
-      resolve("Here is your burger");
-    }, 2000);
-  } else {
-    reject("Sorry kitchen closed");
-  }
-});
+// const namesGirld: string[] = ["Lucy", "Roxana", "Rouse"];
 
-burgerPromise
-  .then((burger) => console.log(burger))
-  .catch((error) => console.log(error));
+// namesGirld.forEach((x) => console.log(x.toUpperCase()));
+// namesGirld.forEach(function(x) {
+//     console.log(x.length);
+// })
+
+function printName(object: { name: string; age?: number }): void {
+  console.log(`${object.name} hello how are you`);
+}
+
+printName({ name: "Lucy", age: 40 });
