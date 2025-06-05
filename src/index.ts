@@ -50,6 +50,41 @@ function echo<T>(input: T): T {
 // console.log(firstStr);
 // console.log(typeof firstStr);
 
+// interface Box<T> {
+//     value: T;
+// }
 
+// const numberBox: Box<number> = {value: 42};
+// const stringBox: Box<string> = {value: "Hello, world!"};
 
+// console.log(numberBox);
+// console.log(stringBox);
 
+// let variableName: any;
+// variableName = "Hello world!";
+// console.log(variableName);
+// variableName = 4500;
+// console.log(variableName);
+
+// let trusting: unknown = "Lucy";
+
+// if (typeof trusting === "string") {
+//     console.log(trusting.toUpperCase());
+// } else {
+//     console.log("Verify before trusting");
+// }
+
+// let myName: string = "Alice";
+// console.log(myName.slice(2,5));
+
+function message(person: string): void {
+  console.log("hello, how are you? " + person);
+}
+
+message("Alice");
+
+function longMessage(name: string, age: number): string {
+    return `Hello ${name} and my age ${age}`;
+}
+
+console.log(longMessage("Alice", 5000));

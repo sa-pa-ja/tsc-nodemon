@@ -68,5 +68,61 @@ const numberBox: Box<number> = { value: 42 };
 const stringBox: Box<string> = { value: "Hello" };
 ```
 
+## Any
 
+TypeScript also has a special type, `any`, that you can use whenever you don't want a particular value to cause typechecking errors.
 
+```typescript
+let object: any = { x: 0 };
+object.foo();
+object();
+object.bar = 100;
+object = "Hello world";
+const n: number = object;
+```
+
+## Understanding `any` and `unknown` in TypeScript
+
+- **I don't know yet, just trust me** -> `any`
+- **I don't know yet, but i will check later!!** -> `unknown`
+
+### `any` turn off TypeScript checks
+
+- Lets you use any value **without warnings**
+
+- Rarely! Only if you are desperate (e.g working with messy old code)
+
+```typescript
+let user: any = "Alice";
+user = 42;
+user = true;
+```
+
+### `unknown` I will check this later
+
+- Forces you to check the type before using it.
+- When you really don't know the type yet(e.g API responses).
+
+```typescript
+let date: unknown = fetchSomeData();
+if (typeof data === "string") {
+  console.log(data.toUppercase());
+} else {
+  console.log("Not a string");
+}
+```
+
+## Functions
+
+Functions are the primary means of passing data around in JavaScript allows you to specify the types of both the input and output values of functions.
+
+### Parameter type annotations
+
+When you declare a function, you can add type annotations after each parameters to declare what types of parameters the function accepts.
+
+```typescript
+function greet(name: string) {
+  console.log("Hello", +name.toUpperCase() + "!");
+}
+greet("Alice");
+```
