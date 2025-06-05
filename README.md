@@ -126,3 +126,23 @@ function greet(name: string) {
 }
 greet("Alice");
 ```
+
+### Return type annotations
+
+You can also add return type annotations. Return type annotations appear after the parameter list:
+
+```typescript
+function getFavoriteNumber(): number {
+  return 26;
+}
+```
+
+### Functions which return promises
+
+If you want to annotate the return type of a function which returns a promise, you should use the `Promise` type:
+
+```typescript
+async function getFavoriteNumber(): Promise<number> {
+  return 26;
+}
+```

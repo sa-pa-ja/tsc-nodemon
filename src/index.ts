@@ -77,14 +77,29 @@ function echo<T>(input: T): T {
 // let myName: string = "Alice";
 // console.log(myName.slice(2,5));
 
-function message(person: string): void {
-  console.log("hello, how are you? " + person);
-}
+// function message(person: string): void {
+//   console.log("hello, how are you? " + person);
+// }
 
-message("Alice");
+// message("Alice");
 
-function longMessage(name: string, age: number): string {
-    return `Hello ${name} and my age ${age}`;
-}
+// function longMessage(name: string, age: number): string {
+//     return `Hello ${name} and my age ${age}`;
+// }
 
-console.log(longMessage("Alice", 5000));
+// console.log(longMessage("Alice", 5000));
+
+const burgerPromise = new Promise((resolve, reject) => {
+  const isKitchenOpen = true;
+  if (isKitchenOpen) {
+    setTimeout(() => {
+      resolve("Here is your burger");
+    }, 2000);
+  } else {
+    reject("Sorry kitchen closed");
+  }
+});
+
+burgerPromise
+  .then((burger) => console.log(burger))
+  .catch((error) => console.log(error));
